@@ -33,7 +33,7 @@ public class NoDuplamenteEncadeado {
 
 	@Override
 	public String toString() {
-		return "No - elemento: " + elemento;
+		return  (String) elemento;
 	}
 	
 }

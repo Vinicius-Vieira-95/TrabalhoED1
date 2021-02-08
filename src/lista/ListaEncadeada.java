@@ -158,14 +158,26 @@ public class ListaEncadeada<T> {
 		NoDuplamenteEncadeado aux = this.inicio;
 
 		while (aux != null) {
-			System.out.println(aux.getElemento());
+			System.out.print(aux.getElemento()+" ");
 			aux = aux.getProx();
 		}
 		return true;
 	}
-	
-	public String toString() {
-		return this.palavra;
-	}
 
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.palavra+" - ");
+		
+		NoDuplamenteEncadeado aux = this.inicio;
+
+		while (aux != null) {
+			sb.append(aux.getElemento()+" ");
+			aux = aux.getProx();
+		}
+		return sb.toString();
+	}
+	
+	
+	
 }

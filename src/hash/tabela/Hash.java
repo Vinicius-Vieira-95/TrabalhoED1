@@ -1,7 +1,5 @@
 package hash.tabela;
 
-import java.util.Arrays;
-
 import lista.ListaEncadeada;
 
 public class Hash {
@@ -66,7 +64,16 @@ public class Hash {
 		int num = valorString(palavra);
 		int pos = chaveDivisao(num, tabela.length);
 		
-		tabela[pos].inserirNoFim(i);
+		if(palavra.equalsIgnoreCase(tabela[pos].getPalavra())) {
+			tabela[pos].inserirNoFim(i);
+		}
+		else {
+			for(int j = 0; j < tabela.length; j++) {
+				if(palavra.equalsIgnoreCase(tabela[j].getPalavra())){
+					tabela[j].inserirNoFim(i);
+				}
+			}
+		}
 		
 	}
 
@@ -114,12 +121,20 @@ public class Hash {
 		}
 		return valor;
 	}
+	
+	public void ordenarTabela() {
+		
+	}
 
 	@Override
 	public String toString() {
-		return  Arrays.toString(tabela);
+		StringBuilder sb = new StringBuilder();
+		for(int i = 0; i < tabela.length; i++) {
+			sb.append(tabela[i]+"\n");
+		}
+		return sb.toString();
 	}
 	
 	
-
+	
 }

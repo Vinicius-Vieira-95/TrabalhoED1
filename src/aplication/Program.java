@@ -1,32 +1,28 @@
 package aplication;
 
-import hash.tabela.Hash;
+import java.io.File;
+
+import arquivo.Arquivo;
 
 public class Program {
 
 	public static void main(String[] args) {
 		
+		String file = "C:\\TesteArq\\teste.txt";
+		File file2 = new File(file);
 		
-		Hash h = new Hash(10);
+		Arquivo arq = new Arquivo(file2);
 		
-		h.insereHash_EnderecoAberto("lua");
-		h.insereHash_EnderecoAberto("sol");
-		h.insereHash_EnderecoAberto("jupter");
-		h.insereHash_EnderecoAberto("venus");
-		h.insereHash_EnderecoAberto("marte");
-		h.insereHash_EnderecoAberto("saturno");
-		h.insereHash_EnderecoAberto("neturno");
-		h.insereHash_EnderecoAberto("estrela");
-		h.insereHash_EnderecoAberto("mervcurio");
-		h.insereHash_EnderecoAberto("terra");
+		arq.lerArquivo();
+		System.out.println();
+		System.out.println("Palavras selecionandas");
+		arq.pesquisarPalavras("Good easy but not by use programming");
+		System.out.println("Good easy but not by use programming");
+		System.out.println();
+		System.out.println("\n Indice Remissivo");
 		
-		h.insereLinha("lua", 1);
-		h.insereLinha("lua", 3);
-		h.insereLinha("lua", 5);
+		System.out.println(arq.getHash().toString());
 		
-		h.buscaHash_SemColisão("lua");
-		
-		System.out.println(h.toString());
 	}
 	
 }
