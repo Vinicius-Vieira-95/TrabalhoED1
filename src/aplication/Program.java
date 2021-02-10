@@ -16,12 +16,17 @@ public class Program {
 		arq.lerArquivo();
 		System.out.println();
 		System.out.println("Palavras selecionandas");
-		arq.pesquisarPalavras("Good easy but not by use programming");
-		System.out.println("Good easy but not by use programming");
+		arq.pesquisarPalavras("good easy but not by use programming");
+		System.out.println("good easy but not by use programming"
+				);
 		System.out.println();
 		System.out.println("\n Indice Remissivo");
 		
 		System.out.println(arq.getHash().toString());
+		
+		System.out.println("maria".compareTo("alex"));
+		System.out.println("alex".compareTo("maria"));
+		
 		
 	}
 	

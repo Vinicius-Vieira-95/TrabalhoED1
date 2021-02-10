@@ -122,12 +122,23 @@ public class Hash {
 		return valor;
 	}
 	
-	public void ordenarTabela() {
-		
+	private void ordenarTabela() {
+		for(int i = 0; i < tabela.length; i++) {
+			for(int j = 0; j < tabela.length; j++) {
+				int m = tabela[i].getPalavra().compareTo(tabela[j].getPalavra());
+				if(m < 0) {
+					ListaEncadeada<Integer> aux = tabela[i];
+					tabela[i] = tabela[j];
+					tabela[j] = aux;
+				}
+				
+			}
+		}
 	}
 
 	@Override
 	public String toString() {
+		ordenarTabela();
 		StringBuilder sb = new StringBuilder();
 		for(int i = 0; i < tabela.length; i++) {
 			sb.append(tabela[i]+"\n");
