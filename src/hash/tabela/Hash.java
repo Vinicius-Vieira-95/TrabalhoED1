@@ -60,6 +60,7 @@ public class Hash {
 		return elemento;
 	}
 	
+	
 	public void insereLinha(String palavra, int i) {
 		int num = valorString(palavra);
 		int pos = chaveDivisao(num, tabela.length);
@@ -122,6 +123,7 @@ public class Hash {
 		return valor;
 	}
 	
+	//metodo para ordenar elementos na tabela hash.
 	private void ordenarTabela() {
 		for(int i = 0; i < tabela.length; i++) {
 			for(int j = 0; j < tabela.length; j++) {

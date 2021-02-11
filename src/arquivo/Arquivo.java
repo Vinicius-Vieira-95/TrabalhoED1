@@ -40,6 +40,7 @@ public class Arquivo {
 		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 			String linha = br.readLine();
 			while (linha != null) {
+				linha.toLowerCase();
 				System.out.println(linha);
 				linha = br.readLine();
 			}
@@ -61,8 +62,8 @@ public class Arquivo {
 			int j = 1;
 			while (linha != null) {
 				for (int i = 0; i < vetor.length; i++) {
-					if (linha.contains(vetor[i])) {
-						hash.insereLinha(vetor[i], j);
+					if (linha.contains(vetor[i])) {		
+							hash.insereLinha(vetor[i], j);
 					}
 				}
 				linha = br.readLine();
@@ -75,6 +76,10 @@ public class Arquivo {
 			e.printStackTrace();
 		}
 
+	}
+	
+	public void printIndiceRemissivo() {
+		System.out.println(hash.toString());
 	}
 
 }
