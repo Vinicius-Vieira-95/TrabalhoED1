@@ -50,7 +50,7 @@ public class Arquivo {
 	}
 
 	public void pesquisarPalavras(String palavras) {
-		String[] vetor = palavras.split(" ");
+		String[] vetor = palavras.toLowerCase().split(" ");
 		hash = new Hash(vetor.length);
 
 		for (String s : vetor) {
@@ -61,6 +61,14 @@ public class Arquivo {
 			String linha = br.readLine();
 			int j = 1;
 			while (linha != null) {
+				
+				String [] vetor2 = linha.split(" ");
+				StringBuilder sb = new StringBuilder();
+				for(int i = 0; i < vetor2.length; i++) {
+					sb.append(vetor2[i].toLowerCase()+" ");
+				}
+				linha = sb.toString();
+				
 				for (int i = 0; i < vetor.length; i++) {
 					if (linha.contains(vetor[i])) {		
 							hash.insereLinha(vetor[i], j);
